@@ -53,16 +53,17 @@
   padding: 1.25rem 1.5rem;
   position: absolute;
   top: -4px;
-  right: 0px; 
+  right: -260px; 
   /* Adjusted from 100% for better control */
   overflow: hidden;
-  transform: rotate(44.93deg) translateX(30%);
+  transform: rotate(44.93deg) translateX(20%);
   /* Added translateX for positioning */
   z-index: 10;
   &__text {
     font-family: $font-secondary;
     color: $color-dark-100;
-    font-size: 31px;
+    font-size: 70px;
+    line-height: 77px;
     font-weight: bold;
     text-align: center;
   }
