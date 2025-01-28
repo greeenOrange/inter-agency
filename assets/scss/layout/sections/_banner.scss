@@ -1,56 +1,174 @@
 @use "../../utils/" as *;
-.hero{
+
+// .column_one {
+//   grid-area: column1;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover; /* Ensures the image covers its area */
+//   position: relative;
+//   z-index: 1;
+// }
+// .column_two {
+//   grid-area: column2;
+//   align-self: center;
+//   justify-self: center;
+//   position: relative;
+//   left: -15rem;
+//   /* Pull column2 closer to column1 */
+//   z-index: 2;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .column_three {
+//   grid-area: column3;
+//   align-self: start;
+//   justify-self: start;
+//   position: relative;
+// }
+.hero {
   background-color: $color-blue;
+  &__content {
+    @include container;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 2rem;
   }
-.hero__description {
-  font-size: 1.125rem;
-  opacity: 0.8;
-  max-width: 32rem;
-  margin-bottom: 1.5rem;
+  &__title__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  &__title {
+    font-family: $font-primary;
+    color: $color-white;
+    font-size: 200px;
+    line-height: 200px;
+    font-weight: 800;
+  }
+  &__subtitle {
+    align-self: flex-end;
+    font-family: $font-secondary;
+    color: $color-white;
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+    &__middle {
+      display: grid;
+      gap: 1rem;
+      &__items {
+        display: grid;
+        grid-template-areas:
+          "column1 column2 column2"
+          "column1 column3 column3";
+        gap: 1rem;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 19rem auto;
+        width: 100%;
+        margin-inline: auto;
+        position: relative;
+      }
+      &__title {
+        margin-bottom: 1rem;
+      }
+      &__paragraph {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 31px;
+        color: $color-blue-100;
+        padding-left: 4rem;
+      }
+    }
+    &__subtitle_extra {
+      display: flex;
+      align-self: center;
+    }
+    &__item__email {
+      font-family: $font-primary;
+      font-size: 35px;
+      line-height: 38.5px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 3rem;
+    }
+    
+  }
 }
+  .column_one {
+      grid-area: column1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .column_two {
+      grid-area: column2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      position: relative;
+      left: -12rem;
+    }
+    .column_three {
+      grid-area: column3;
+       display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
 
-.hero__email {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.portfolio-item {
-  position: relative;
-  aspect-ratio: 1;
-  border-radius: 0.5rem;
+/* Swiper Styles */
+.swiper {
+  width: 100%;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.1);
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .portfolio-number {
-    position: absolute;
-    inset: 0;
-    @include flex-center;
-    background: rgba(0, 0, 0, 0.3);
-    font-size: 0.875rem;
-    font-weight: 500;
+  &-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+       object-fit: cover;
+    }
   }
 }
+  .inter_agency{
+    .portfolio-number {
+      font-family: $font-secondary;
+      font-size: 22px;
+      line-height: 24.3px;
+      letter-spacing: -1px;
+      color: $color-white;
+    }
+    }
 
-.hero__image {
-  aspect-ratio: 1;
-  border-radius: 1.5rem;
-  overflow: hidden;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero__middle__items {
+    grid-template-areas:
+      "column1"
+      "column2"
+      "column3";
+    grid-template-columns: 1fr;
+  }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .hero__item {
+    &.column_two,
+    &.column_three {
+      left: 0;
+      align-items: center;
+      text-align: center;
+    }
   }
 }

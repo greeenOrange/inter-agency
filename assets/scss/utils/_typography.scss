@@ -1,9 +1,17 @@
 @font-face {
-  font-family: 'bingar';
-  src: url('/assets/fonts/BingarDEMO-Regular.otf') format('opentype');
+  font-family: "hagrid-Text";
+  src: url("/assets/fonts/Hagrid-Text-Extrabold-trial.ttf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bingar";
+  src: url("/assets/fonts/BingarDEMO-Regular.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
-$font-secondary: 'bingar', sans-serif;
+$font-primary: "hagrid-Text", sans-serif;
+$font-secondary: "bingar", sans-serif;

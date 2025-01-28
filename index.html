@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inter Agency - Design Studio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -25,61 +30,82 @@
           </div>
         </nav>
       </div>
-      <div class="badge"><h2 class="badge__text">Branding Design \\Agency \\video production</h2></div>
+      <div class="badge">
+        <h2 class="badge__text">Branding Design \\Agency \\video production</h2>
+      </div>
     </header>
     <div class="hero">
       <div class="hero__content">
         <div class="hero__titles">
-          <h1 class="hero__title">Your Vision</h1>
-          <div class="hero__subtitle">
-            <span>OUR</span>
-            <svg class="star-icon" viewBox="0 0 40 40">
-              <path
-                d="M20 0L24.7 15.3L40 20L24.7 24.7L20 40L15.3 24.7L0 20L15.3 15.3L20 0Z"
-              />
-            </svg>
-            <span>DESIGN</span>
-          </div>
+          <span class="hero__title__wrapper">
+            <h1 class="hero__title">Your Vision</h1>
+            <h4 class="hero__subtitle">High Quality</h4>
+          </span>
         </div>
 
-        <p class="hero__description">
-          I craft websites that align with your brand and engage your audience —
-          creating meaningful and memorable experiences
-        </p>
-
-        <p class="hero__email">(INFO@WORKMAIL.COM)</p>
-
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
+        <div class="hero__middle">
+          <div class="hero__middle__items">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design_Task_File-2ZX0002WqcUOQGFeXFbUufQi0ebEu7.png"
-              alt="Portfolio image 01"
+              class="hero__item column_one"
+              src="./assets/images/hero/hero.png"
+              alt="Hero"
             />
-            <span class="portfolio-number">01</span>
-          </div>
-          <div class="portfolio-item">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design_Task_File-2ZX0002WqcUOQGFeXFbUufQi0ebEu7.png"
-              alt="Portfolio image 02"
-            />
-            <span class="portfolio-number">02</span>
-          </div>
-          <div class="portfolio-item">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design_Task_File-2ZX0002WqcUOQGFeXFbUufQi0ebEu7.png"
-              alt="Portfolio image 03"
-            />
-            <span class="portfolio-number">03</span>
+            <div class="hero_item_middle hero__item column_two">
+              <h1 class="hero__title hero__middle__title">Our</h1>
+              <img class="hero__middle__flower" src="./assets/images/hero/flower.png" alt="" />
+              <p class="hero__middle__paragraph">
+                I craft websites that align with your brand
+                and engage your audience – creating
+                meaningful and memorable experiences
+              </p>
+            </div class="hero_open_slider">
+            <div class="column_three">
+              <div>
+                <h1 class="hero__title">Design</h1>
+              <p class="hero__item__email">(info@workmail.com)</p>
+              </div>
+              <!-- Swiper -->
+              <div class="swiper inter_agency">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="portfolio-number">(01)</span>
+                    <img src="/assets/images/hero/Café-Gathering.png" alt="" />
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="portfolio-number">(02)</span>
+                    <img
+                      src="/assets/images/hero/Fashionable-young.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="portfolio-number">(03)</span>
+                    <img
+                      src="/assets/images/hero/Fashionable-young.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="portfolio-number">(04)</span>
+                    <img src="/assets/images/hero/Café-Gathering.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="hero__image">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design_Task_File-2ZX0002WqcUOQGFeXFbUufQi0ebEu7.png"
-          alt="Team collaboration"
-        />
       </div>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".inter_agency", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      });
+    </script>
   </body>
 </html>
