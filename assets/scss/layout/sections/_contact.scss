@@ -5,15 +5,15 @@
   //   color: $color-dark;
   padding: 5rem 0;
   text-align: center;
-  &container {
+  &__container {
     @include container;
     padding: 0 3rem;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: left;
-    // gap: 2rem;
   }
+    &__last_email{
+        font-family: $font-secondary;
+        font-size: 70px;
+        line-height: 90px;
+    }
 }
 .cta_title_wrapper {
   display: flex;
@@ -102,6 +102,7 @@ font-family: $font-primary;
     }
   }
 }
+
 
 @keyframes rotate {
   from {
