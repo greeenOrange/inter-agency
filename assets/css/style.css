@@ -328,6 +328,7 @@ input[type=color] {
 }
 .hero .hero__item__email {
   font-family: "hagrid-Text", sans-serif;
+  color: #fff;
   font-size: 35px;
   line-height: 38.5px;
   text-transform: uppercase;
@@ -397,6 +398,120 @@ input[type=color] {
     align-items: center;
     text-align: center;
   }
+}
+.cta {
+  background-color: #19EC60;
+  padding: 5rem 0;
+  text-align: center;
+}
+.ctacontainer {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding: 0 3rem;
+}
+
+.cta_title_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta__title_one {
+  font-family: "hagrid-Text", sans-serif;
+  color: #041C0C;
+  font-size: 190px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.cta__title_one .arrow-icon {
+  width: clamp(2rem, 4vw, 3rem);
+  height: clamp(2rem, 4vw, 3rem);
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.cta__title_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta__second_title_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 3rem;
+}
+
+.cta__second_title {
+  font-family: "hagrid-Text", sans-serif;
+  color: #041C0C;
+  font-size: 190px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.cta__third_title {
+  font-family: "hagrid-Text", sans-serif;
+  color: #041C0C;
+  font-size: 200px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.rotating-badge {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem auto;
+}
+.rotating-badge .badge-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+.rotating-badge .badge-text {
+  position: absolute;
+  inset: 0;
+  animation: rotate 20s linear infinite;
+}
+.rotating-badge .badge-text text {
+  font-size: 8px;
+  fill: currentColor;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cta__email {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

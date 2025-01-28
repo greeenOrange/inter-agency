@@ -1,0 +1,118 @@
+@use "../../utils/" as *;
+// CTA Section
+.cta {
+  background-color: $color-green;
+  //   color: $color-dark;
+  padding: 5rem 0;
+  text-align: center;
+  &container {
+    @include container;
+    padding: 0 3rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: left;
+    // gap: 2rem;
+  }
+}
+.cta_title_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_one {
+    font-family: $font-primary;
+    //   font-size: clamp(2.5rem, 8vw, 5rem);
+    color: $color-green-100;
+    font-size: 190px;
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+
+    .arrow-icon {
+      width: clamp(2rem, 4vw, 3rem);
+      height: clamp(2rem, 4vw, 3rem);
+      display: inline-block;
+      vertical-align: middle;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+  }
+}
+.cta__title_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta__second_title_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 3rem;
+}
+.cta__second_title {
+  font-family: $font-primary;
+  //   font-size: clamp(2.5rem, 8vw, 5rem);
+  color: $color-green-100;
+  font-size: 190px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.cta__third_title {
+font-family: $font-primary;
+  color: $color-green-100;
+  font-size: 200px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.rotating-badge {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem auto;
+
+  .badge-content {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-size: 2rem;
+  }
+
+  .badge-text {
+    position: absolute;
+    inset: 0;
+    animation: rotate 20s linear infinite;
+
+    text {
+      font-size: 8px;
+      fill: currentColor;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cta__email {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
