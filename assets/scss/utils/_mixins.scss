@@ -1,4 +1,7 @@
-@mixin container {
+@use "./_typography.scss" as *;
+@use "./_colors.scss" as *;
+
+  @mixin container {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -8,6 +11,14 @@
   align-items: center;
   justify-content: center;
 }
+  @mixin title-styles($font-size, $line-height) {
+  font-family: $font-primary;
+  color: $color-white;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: 800;
+}
+
   @mixin wpr-transition($time: 0.3s) {
   transition: all $time ease-in-out;
   -webkit-transition: all $time ease-in-out;

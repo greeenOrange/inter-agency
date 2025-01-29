@@ -1,3 +1,10 @@
+.absolute-center, .badge-content, .center-circle, .thumb-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @font-face {
   font-family: "hagrid-Text";
   src: url("/assets/fonts/Hagrid-Text-Extrabold-trial.ttf") format("opentype");
@@ -185,7 +192,6 @@ input[type=color] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
   gap: 2rem;
 }
 .hero__title__wrapper {
@@ -193,12 +199,31 @@ input[type=color] {
   align-items: center;
   gap: 2rem;
 }
-.hero__title {
+.hero__title_vision {
   font-family: "hagrid-Text", sans-serif;
   color: #fff;
   font-size: 200px;
   line-height: 200px;
   font-weight: 800;
+}
+.hero__title_our {
+  font-family: "hagrid-Text", sans-serif;
+  color: #fff;
+  font-size: 210px;
+  line-height: 210px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.hero__title_design {
+  font-family: "hagrid-Text", sans-serif;
+  color: #fff;
+  font-size: 237px;
+  line-height: 237px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.hero__middle__title {
+  padding-bottom: 4.5rem;
 }
 .hero__subtitle {
   align-self: flex-end;
@@ -211,24 +236,21 @@ input[type=color] {
   margin: 0;
   padding: 0;
 }
-.hero__middle {
-  display: grid;
-  gap: 1rem;
-}
-.hero__middle__items {
+.hero .hero__middle__items {
   display: grid;
   grid-template-areas: "column1 column2 column2" "column1 column3 column3";
   gap: 1rem;
-  grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: 19rem auto;
+  grid-template-columns: 1.8fr 1fr 2fr;
+  grid-template-rows: 13rem auto;
   width: 100%;
   margin-inline: auto;
   position: relative;
 }
-.hero__middle__title {
+.hero .hero__middle__title {
   margin-bottom: 1rem;
 }
-.hero__middle__paragraph {
+.hero .hero__middle__paragraph {
+  font-family: "bingar", sans-serif;
   font-size: 28px;
   font-weight: 400;
   line-height: 31px;
@@ -240,13 +262,21 @@ input[type=color] {
   align-self: center;
 }
 .hero__item__email {
-  font-family: "hagrid-Text", sans-serif;
+  font-family: "bingar", sans-serif;
   color: #fff;
   font-size: 35px;
   line-height: 38.5px;
   text-transform: uppercase;
   text-align: center;
-  padding-top: 3rem;
+  padding: 2rem 0 4rem 0;
+}
+
+.inter_agency .portfolio-number {
+  font-family: "bingar", sans-serif;
+  font-size: 22px;
+  line-height: 24.3px;
+  letter-spacing: -1px;
+  color: #fff;
 }
 
 .column_one {
@@ -259,27 +289,35 @@ input[type=color] {
 
 .column_two {
   grid-area: column2;
+  position: relative;
+  left: -14rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  position: relative;
-  left: -23rem;
-  width: 100%;
+  gap: 1rem;
 }
 
 .column_three {
   grid-area: column3;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.column_three > div:first-child {
+  width: 100%;
+}
+.column_three .swiper.inter_agency {
+  position: relative;
+  left: 7%;
 }
 
 /* Swiper Styles */
 .swiper {
   width: 100%;
   overflow: hidden;
+  max-width: 560px;
+  margin-right: auto;
 }
 .swiper-slide {
   display: flex;
@@ -291,14 +329,6 @@ input[type=color] {
   width: auto;
   height: auto;
   object-fit: cover;
-}
-
-.inter_agency .portfolio-number {
-  font-family: "bingar", sans-serif;
-  font-size: 22px;
-  line-height: 24.3px;
-  letter-spacing: -1px;
-  color: #fff;
 }
 
 /* Responsive Adjustments */
@@ -316,7 +346,7 @@ input[type=color] {
 .cta {
   background-color: #19EC60;
   padding: 5rem 0;
-  text-align: center;
+  text-align: right;
 }
 .cta__container {
   width: 100%;
@@ -325,6 +355,8 @@ input[type=color] {
   padding: 0 3rem;
 }
 .cta__last_email {
+  padding-right: 8rem;
+  align-self: flex-end;
   font-family: "bingar", sans-serif;
   font-size: 70px;
   line-height: 90px;
@@ -370,6 +402,7 @@ input[type=color] {
 }
 
 .cta__third_title {
+  position: relative;
   font-family: "hagrid-Text", sans-serif;
   color: #041C0C;
   font-size: 200px;
@@ -379,28 +412,51 @@ input[type=color] {
 
 .rotating-badge {
   position: relative;
-  width: 8rem;
-  height: 8rem;
-  margin: 2rem auto;
+  width: 376px;
+  height: 376px;
+  margin: -260px 33rem 0 auto;
+  background-color: transparent;
 }
-.rotating-badge .badge-content {
-  position: absolute;
-  inset: 0;
+
+.badge-content {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1C2503;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  font-size: 2rem;
+  overflow: hidden;
 }
-.rotating-badge .badge-text {
-  position: absolute;
-  inset: 0;
+
+.badge-text {
+  width: 100%;
+  height: 100%;
   animation: rotate 20s linear infinite;
 }
-.rotating-badge .badge-text text {
-  font-size: 8px;
-  fill: currentColor;
+.badge-text text {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.center-circle {
+  width: 220px;
+  height: 220px;
+  background-color: #1c2503;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-icon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  z-index: 3;
 }
 
 @keyframes rotate {
@@ -411,11 +467,6 @@ input[type=color] {
     transform: rotate(360deg);
   }
 }
-.cta__email {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
 .header {
   background-color: #0C30AE;
   color: #fff;

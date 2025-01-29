@@ -3,12 +3,14 @@
 .cta {
   background-color: $color-green;
   padding: 5rem 0;
-  text-align: center;
+  text-align: right;
   &__container {
     @include container;
     padding: 0 3rem;
   }
   &__last_email {
+    padding-right: 8rem;
+    align-self: flex-end;
     font-family: $font-secondary;
     font-size: 70px;
     line-height: 90px;
@@ -28,16 +30,6 @@
     font-size: 190px;
     font-weight: bold;
     text-transform: uppercase;
-
-    // .arrow-icon {
-    //   width: clamp(2rem, 4vw, 3rem);
-    //   height: clamp(2rem, 4vw, 3rem);
-    //   display: inline-block;
-    //   vertical-align: middle;
-    //   stroke: currentColor;
-    //   stroke-width: 2;
-    //   fill: none;
-    // }
   }
   .cta__right_arrow {
     align-self: center;
@@ -50,45 +42,65 @@
 }
 .cta__second_title {
   font-family: $font-primary;
-  //   font-size: clamp(2.5rem, 8vw, 5rem);
   color: $color-green-100;
   font-size: 190px;
   font-weight: bold;
   text-transform: uppercase;
 }
 .cta__third_title {
+  position: relative;
   font-family: $font-primary;
   color: $color-green-100;
   font-size: 200px;
   font-weight: bold;
   text-transform: uppercase;
 }
-
 .rotating-badge {
   position: relative;
-  width: 8rem;
-  height: 8rem;
-  margin: 2rem auto;
-
-  .badge-content {
-    position: absolute;
-    inset: 0;
-    @include flex-center;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    font-size: 2rem;
+  width: 376px;
+  height: 376px;
+  margin: -260px 33rem 0 auto;
+  background-color: transparent;
+}
+.badge-content {
+  @extend .absolute-center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $color-green-200;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.badge-text {
+  width: 100%;
+  height: 100%;
+  animation: rotate 20s linear infinite;
+  text {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
   }
-
-  .badge-text {
-    position: absolute;
-    inset: 0;
-    animation: rotate 20s linear infinite;
-
-    text {
-      font-size: 8px;
-      fill: currentColor;
-    }
-  }
+}
+.center-circle {
+  @extend .absolute-center;
+  width: 220px;
+  height: 220px;
+  background-color: #1c2503;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumb-icon {
+  @extend .absolute-center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  z-index: 3;
 }
 
 @keyframes rotate {
@@ -98,9 +110,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.cta__email {
-  font-size: 1.5rem;
-  font-weight: 500;
 }
