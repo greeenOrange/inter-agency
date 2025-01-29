@@ -17,29 +17,64 @@
     gap: 2rem;
   }
   &__title_vision {
-    @include title-styles(200px, 200px);
+    @include title-styles($font-size-4xl, $line-height-7);
+      @media #{$xxl} { @include title-styles(9.38rem, $line-height-1); }
+    @media #{$xl} { @include title-styles(7.5rem, $line-height-1); }
+    @media #{$lg} { @include title-styles(6rem, $line-height-1); }
+    @media #{$md} { @include title-styles(5rem, $line-height-1); }
+    @media #{$sm} { @include title-styles(4rem, $line-height-1); }
+    @media #{$xs} { @include title-styles(3rem, $line-height-1); }
   }
   &__title_our {
-    @include title-styles(210px, 210px);
+    @include title-styles($font-size-5xl, $line-height-8);
+    @media #{$xxl} {
+      @include title-styles(10rem, $line-height-1);
+    }
+      @media #{$xl} {
+        @include title-styles(7.5rem, $line-height-1);
+      }
     text-transform: uppercase;
   }
   &__title_design {
-    @include title-styles(237px, 237px);
+    @include title-styles($font-size-7xl, $line-height-9);
+    @media #{$xxl} {
+      @include title-styles(11.69rem, $line-height-1);
+    }
+      @media #{$xl} {
+        @include title-styles(9.5rem, $line-height-1);
+      }
     text-transform: uppercase;
   }
   &__middle__title {
     padding-bottom: 4.5rem;
+    @media #{$xxl} {
+      padding-bottom: 3rem;
+    }
+    @media #{$xl} {
+      padding-bottom: 2rem;
+    }
+    @media #{$lg} {
+      padding-bottom: 1rem;
+    }
+    @media #{$md} {
+      padding-bottom: 0.5rem;
+    }
+    
   }
   &__subtitle {
     align-self: flex-end;
     font-family: $font-secondary;
     color: $color-white;
-    font-size: 30px;
-    line-height: 33px;
-    font-weight: 400;
+    font-size: $font-size-xs;
+    @media #{$xxl} { font-size: 1.56rem; }
+    @media #{$xl} { font-size: 1.23rem; }
+    @media #{$lg} { font-size: 1rem; }
+    @media #{$md} { font-size: 0.875rem; }
+    @media #{$sm} { font-size: 0.75rem; }
+    @media #{$xs} { font-size: 0.625rem; }
+    line-height: $line-height-3;
+    font-weight: $font-weight-regular;
     text-transform: uppercase;
-    margin: 0;
-    padding: 0;
   }
 
   .hero__middle {
@@ -50,6 +85,11 @@
         "column1 column3 column3";
       gap: 1rem;
       grid-template-columns: 1.8fr 1fr 2fr;
+       @media #{$xxl} { grid-template-columns: 1.7fr 1fr 2fr; }
+    @media #{$xl} { grid-template-columns: 1.5fr 1fr 2fr; }
+    @media #{$lg} { grid-template-columns: 1.3fr 1fr 2fr; }
+    @media #{$md} { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    @media #{$sm} { grid-template-columns: 1fr; grid-template-rows: auto; }
       grid-template-rows: 13rem auto;
       width: 100%;
       margin-inline: auto;
@@ -60,9 +100,19 @@
     }
     &__paragraph {
       font-family: $font-secondary;
-      font-size: 28px;
-      font-weight: 400;
-      line-height: 31px;
+      font-size: $font-size-sm;
+      @media #{$xxl} {
+        font-size: 1.4rem;
+        line-height: $line-height-1;
+        padding-left: 2rem;
+      }
+      @media #{$xl} {
+        font-size: 1.2rem;
+        line-height: $line-height-1;
+        padding-left: 2rem;
+      }
+      font-weight: $font-weight-regular;
+      line-height: $line-height-2;
       color: $color-blue-100;
       padding-left: 4rem;
     }
@@ -74,8 +124,18 @@
   &__item__email {
     font-family: $font-secondary;
     color: $color-white;
-    font-size: 35px;
-    line-height: 38.5px;
+    font-size: $font-size-md;
+    @media #{$xxl} {
+      font-size: $font-size-xs;
+      line-height: $line-height-1;
+      padding: 1.5rem 0 3.5rem 0;
+    }
+    @media #{$xl} {
+      font-size: $font-size-xs;
+      line-height: $line-height-1;
+      padding: 1.5rem 0 3.5rem 0;
+    }
+    line-height: 2.41rem; // 38.5px
     text-transform: uppercase;
     text-align: center;
     padding: 2rem 0 4rem 0;
@@ -84,8 +144,32 @@
 .inter_agency {
   .portfolio-number {
     font-family: $font-secondary;
-    font-size: 22px;
-    line-height: 24.3px;
+    font-size: 1.375rem; // 22px
+    line-height: 1.52rem; // 25px
+    @media #{$xxl} {
+      font-size: 1.2rem;
+      line-height: $line-height-1;
+    }
+    @media #{$xl} {
+      font-size: 1rem;
+      line-height: $line-height-1;
+    }
+      @media #{$lg} {
+        font-size: 0.875rem;
+        line-height: $line-height-1;
+      }
+        @media #{$md} {
+          font-size: 0.75rem;
+          line-height: $line-height-1;
+        }
+          @media #{$sm} {
+            font-size: 0.625rem;
+            line-height: $line-height-1;
+          }
+          @media #{$xs} {
+            font-size: 0.5rem;
+            line-height: $line-height-1;
+          }
     letter-spacing: -1px;
     color: $color-white;
   }
@@ -101,6 +185,12 @@
   grid-area: column2;
   position: relative;
   left: -14rem;
+    @media #{$xxl} { left: -12rem; }
+  @media #{$xl} { left: -10rem; }
+  @media #{$lg} { left: -8rem; }
+  @media #{$md} { left: -5rem; }
+  @media #{$sm} { left: -2rem; }
+  @media #{$xs} { left: -1px; }
   width: 100%;
   display: flex;
   align-items: center;
@@ -140,22 +230,3 @@
   }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero__middle__items {
-    grid-template-areas:
-      "column1"
-      "column2"
-      "column3";
-    grid-template-columns: 1fr;
-  }
-
-  .hero__item {
-    &.column_two,
-    &.column_three {
-      left: 0;
-      align-items: center;
-      text-align: center;
-    }
-  }
-}

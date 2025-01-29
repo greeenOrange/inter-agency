@@ -12,8 +12,8 @@
     padding-right: 8rem;
     align-self: flex-end;
     font-family: $font-secondary;
-    font-size: 70px;
-    line-height: 90px;
+    font-size: $font-size-xl;
+    line-height: $line-height-6;
   }
 }
 .cta_title_wrapper {
@@ -27,8 +27,9 @@
     font-family: $font-primary;
     //   font-size: clamp(2.5rem, 8vw, 5rem);
     color: $color-green-100;
-    font-size: 190px;
-    font-weight: bold;
+    font-size: $font-size-3xl;
+    line-height: $line-height-7;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
   .cta__right_arrow {
@@ -43,23 +44,25 @@
 .cta__second_title {
   font-family: $font-primary;
   color: $color-green-100;
-  font-size: 190px;
-  font-weight: bold;
+  font-size: $font-size-7xl;
+  line-height: $line-height-7;
+  font-weight: $font-weight-bold;
   text-transform: uppercase;
 }
 .cta__third_title {
   position: relative;
   font-family: $font-primary;
   color: $color-green-100;
-  font-size: 200px;
-  font-weight: bold;
+  font-size: $font-size-4xl;
+  line-height: $line-height-7;
+  font-weight: $font-weight-bold;
   text-transform: uppercase;
 }
 .rotating-badge {
   position: relative;
-  width: 376px;
-  height: 376px;
-  margin: -260px 33rem 0 auto;
+  width: 23.5rem;
+  height: 23.5rem;
+  margin: -16.25rem 33rem 0 auto;
   background-color: transparent;
 }
 .badge-content {
@@ -98,8 +101,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   z-index: 3;
 }
 
