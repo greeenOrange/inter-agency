@@ -3,36 +3,67 @@
 .footer {
   background-color: $color-green-300;
   color: $color-white;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
 }
 
 .footer__grid {
   @include container;
-  padding: 0 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: minmax(150px, 200px) 1fr 1fr 1fr minmax(250px, auto);
   gap: 2rem;
-  margin-bottom: 3rem;
-}
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  // Border bottom for the whole grid
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color-white;
+  }
+  > * {
+    position: relative;
+    padding-bottom: 4rem;
 
-.footer__logo {
-  width: 120px;
+    // Vertical line after the first column
+    &:first-child::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -1rem;
+      width: 2px;
+      height: 100%;
+      background-color: $color-white;
+    }
+    &:nth-last-child(1) {
+      padding-left: 2rem;
+    }
+    // Vertical line before the last column
+    &:nth-last-child(1)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      width: 2px;
+      height: 100%;
+      background-color: $color-white;
+    }
+  }
 }
 
 .footer__links {
-  h3 {
+  &__title {
     font-family: $font-secondary;
     font-weight: 800;
     font-size: 35px;
     line-height: 60px;
     margin-bottom: 1rem;
   }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
+}
+  .footer__link {
     font-family: $font-secondary;
     color: $color-white;
     font-size: 30px;
@@ -44,21 +75,20 @@
       color: $color-green;
     }
   }
-}
 
 .footer__location {
-  p  {
+  &__text {
     font-family: $font-primary;
     font-weight: 800;
     font-size: 35px;
     line-height: 45px;
     margin-bottom: 1rem;
   }
-
 }
 
 .footer__social {
   @include container;
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +102,7 @@
     line-height: 42px;
     color: $color-white;
     text-decoration: none;
-    padding: 3rem;
+    padding: 2.5rem;
     border: 1px solid $color-white;
     border-radius: 9999px;
     transition: background-color 0.2s;

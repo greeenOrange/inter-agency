@@ -2,6 +2,7 @@
 
 .hero {
   background-color: $color-blue;
+  padding-bottom: 2rem;
   &__content {
     @include container;
     padding: 0 3rem;

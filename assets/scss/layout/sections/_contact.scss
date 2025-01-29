@@ -9,11 +9,11 @@
     @include container;
     padding: 0 3rem;
   }
-    &__last_email{
-        font-family: $font-secondary;
-        font-size: 70px;
-        line-height: 90px;
-    }
+  &__last_email {
+    font-family: $font-secondary;
+    font-size: 70px;
+    line-height: 90px;
+  }
 }
 .cta_title_wrapper {
   display: flex;
@@ -24,32 +24,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   &_one {
     font-family: $font-primary;
     //   font-size: clamp(2.5rem, 8vw, 5rem);
     color: $color-green-100;
     font-size: 190px;
     font-weight: bold;
-    line-height: 2;
-    margin-bottom: 2rem;
     text-transform: uppercase;
 
-    .arrow-icon {
-      width: clamp(2rem, 4vw, 3rem);
-      height: clamp(2rem, 4vw, 3rem);
-      display: inline-block;
-      vertical-align: middle;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-    }
+    // .arrow-icon {
+    //   width: clamp(2rem, 4vw, 3rem);
+    //   height: clamp(2rem, 4vw, 3rem);
+    //   display: inline-block;
+    //   vertical-align: middle;
+    //   stroke: currentColor;
+    //   stroke-width: 2;
+    //   fill: none;
+    // }
+  }
+  .cta__right_arrow {
+      align-self: center;
   }
 }
-.cta__title_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .cta__second_title_wrapper {
   display: flex;
   align-items: center;
@@ -62,17 +60,13 @@
   color: $color-green-100;
   font-size: 190px;
   font-weight: bold;
-  line-height: 2;
-  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 .cta__third_title {
-font-family: $font-primary;
+  font-family: $font-primary;
   color: $color-green-100;
   font-size: 200px;
   font-weight: bold;
-  line-height: 2;
-  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
@@ -102,7 +96,6 @@ font-family: $font-primary;
     }
   }
 }
-
 
 @keyframes rotate {
   from {
