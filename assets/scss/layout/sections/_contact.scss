@@ -2,7 +2,6 @@
 // CTA Section
 .cta {
   background-color: $color-green;
-  //   color: $color-dark;
   padding: 5rem 0;
   text-align: center;
   &__container {
@@ -16,14 +15,11 @@
   }
 }
 .cta_title_wrapper {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
 }
 .cta__title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: 1rem;
   &_one {
     font-family: $font-primary;
@@ -44,14 +40,12 @@
     // }
   }
   .cta__right_arrow {
-      align-self: center;
+    align-self: center;
   }
 }
 
 .cta__second_title_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: 0 3rem;
 }
 .cta__second_title {
