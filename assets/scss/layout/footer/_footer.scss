@@ -14,7 +14,14 @@
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
-  // Border bottom for the whole grid
+
+  @media #{$xs} {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.8rem;
+    .footer__emtpy {
+      display: none;
+    }
+  }
   &::after {
     content: "";
     position: absolute;
@@ -55,26 +62,50 @@
 }
 
 .footer__links {
+  @media #{$xl} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media #{$xs} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
   &__title {
     font-family: $font-primary;
     font-weight: $font-weight-extrabold;
     font-size: $font-size-md;
     line-height: $line-height-1;
     margin-bottom: 1rem;
+    @media #{$xs}{
+      font-size: $font-size-sm;
+      line-height: 1;
+      }
   }
 }
-  .footer__link {
-    font-family: $font-secondary;
-    color: $color-white;
-    font-size: $font-size-xs;
-    font-weight: $font-weight-regular;
-    line-height: $line-height-5;
-    transition: color 0.2s;
-    color: $color-white;
-    &:hover {
-      color: $color-green;
+.footer__link {
+  font-family: $font-secondary;
+  color: $color-white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-5;
+  transition: color 0.2s;
+  color: $color-white;
+  @media #{$md}{
+    line-height: 3rem;
     }
+  @media #{$sm}{
+    line-height: 2.5rem;
+    }
+  @media #{$xs}{
+    line-height: 2rem;
+    }
+  &:hover {
+    color: $color-green;
   }
+}
 
 .footer__location {
   &__text {
@@ -83,6 +114,10 @@
     font-size: $font-size-md;
     line-height: 2.813rem;
     margin-bottom: 1rem;
+    @media #{$xs}{
+      font-size: $font-size-sm;
+      line-height: 2rem;
+      }
   }
 }
 
@@ -92,6 +127,12 @@
   @include flex-center;
   flex-wrap: wrap;
   gap: 1rem;
+  @media #{$xs} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
 
   .social-link {
     font-family: $font-secondary;
@@ -101,6 +142,32 @@
     color: $color-white;
     text-decoration: none;
     padding: 2.5rem;
+    @media #{$xl} {
+      padding: 2rem;
+      font-size: 3.13rem;
+      line-height: 1;
+    }
+    @media #{$lg} {
+      padding: 1.75rem;
+      font-size: 2.75rem;
+      line-height: 1;
+    }
+    @media #{$md} {
+      padding: 1.5rem;
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    @media #{$sm} {
+      padding: 1rem;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    @media #{$xs} {
+      font-size: 1.75rem;
+      line-height: 1;
+      padding: 1.75rem;
+    }
+
     border: 1px solid $color-white;
     border-radius: 9999px;
     transition: background-color 0.2s;
