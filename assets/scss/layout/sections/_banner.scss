@@ -10,6 +10,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    @media #{$xs} {
+      padding: 1rem;
+      align-items: center;
+    }
   }
   &__title__wrapper {
     display: flex;
@@ -18,31 +22,87 @@
   }
   &__title_vision {
     @include title-styles($font-size-4xl, $line-height-7);
-      @media #{$xxl} { @include title-styles(9.38rem, $line-height-1); }
-    @media #{$xl} { @include title-styles(7.5rem, $line-height-1); }
-    @media #{$lg} { @include title-styles(6rem, $line-height-1); }
-    @media #{$md} { @include title-styles(5rem, $line-height-1); }
-    @media #{$sm} { @include title-styles(4rem, $line-height-1); }
-    @media #{$xs} { @include title-styles(3rem, $line-height-1); }
+    @media #{$x3l} {
+      @include title-styles(11.38rem, $line-height-1);
+    }
+    @media #{$xxl} {
+      @include title-styles(9.38rem, $line-height-1);
+    }
+    @media #{$xl} {
+      @include title-styles(7.5rem, $line-height-1);
+    }
+    @media #{$lg} {
+      @include title-styles(6rem, $line-height-1);
+    }
+    @media #{$md} {
+      @include title-styles(5rem, $line-height-1);
+    }
+    @media #{$sm} {
+      @include title-styles(4rem, $line-height-1);
+    }
+    @media #{$xs} {
+      @include title-styles(3rem, $line-height-1);
+    }
   }
   &__title_our {
     @include title-styles($font-size-5xl, $line-height-8);
     @media #{$xxl} {
       @include title-styles(10rem, $line-height-1);
     }
-      @media #{$xl} {
-        @include title-styles(7.5rem, $line-height-1);
-      }
+    @media #{$xl} {
+      @include title-styles(7.5rem, $line-height-1);
+    }
+    @media #{$lg} {
+      @include title-styles(6rem, $line-height-1);
+    }
+    @media #{$md} {
+      @include title-styles(5rem, $line-height-1);
+    }
+    @media #{$sm} {
+      @include title-styles(4rem, $line-height-1);
+    }
+    @media #{$xs} {
+      @include title-styles(3rem, $line-height-1);
+    }
     text-transform: uppercase;
+  }
+  &__middle__flower {
+    max-width: 100%;
+    object-fit: contain;
+    @media #{$lg} {
+      width: 20%;
+    }
+    @media #{$md} {
+      width: 17%;
+    }
+    @media #{$sm} {
+      width: 12%;
+    }
+    @media #{$xs} {
+      width: 60px;
+      height: auto;
+    }
   }
   &__title_design {
     @include title-styles($font-size-7xl, $line-height-9);
     @media #{$xxl} {
       @include title-styles(11.69rem, $line-height-1);
     }
-      @media #{$xl} {
-        @include title-styles(9.5rem, $line-height-1);
-      }
+    @media #{$xl} {
+      @include title-styles(9.5rem, $line-height-1);
+    }
+    @media #{$lg} {
+      @include title-styles(6rem, $line-height-1);
+    }
+    @media #{$md} {
+      @include title-styles(5rem, $line-height-1);
+    }
+    @media #{$sm} {
+      @include title-styles(4rem, $line-height-1);
+    }
+    @media #{$xs} {
+      @include title-styles(3rem, $line-height-1);
+    }
     text-transform: uppercase;
   }
   &__middle__title {
@@ -53,25 +113,27 @@
     @media #{$xl} {
       padding-bottom: 2rem;
     }
-    @media #{$lg} {
-      padding-bottom: 1rem;
+    @media #{$xs} {
+      padding-bottom: 0;
     }
-    @media #{$md} {
-      padding-bottom: 0.5rem;
-    }
-    
   }
   &__subtitle {
     align-self: flex-end;
     font-family: $font-secondary;
     color: $color-white;
     font-size: $font-size-xs;
-    @media #{$xxl} { font-size: 1.56rem; }
-    @media #{$xl} { font-size: 1.23rem; }
-    @media #{$lg} { font-size: 1rem; }
-    @media #{$md} { font-size: 0.875rem; }
-    @media #{$sm} { font-size: 0.75rem; }
-    @media #{$xs} { font-size: 0.625rem; }
+    @media #{$xxl} {
+      font-size: 1.56rem;
+    }
+    @media #{$xl} {
+      font-size: 1.23rem;
+    }
+    @media #{$lg} {
+      font-size: 1rem;
+    }
+    @media #{$md} {
+      font-size: 0.875rem;
+    }
     line-height: $line-height-3;
     font-weight: $font-weight-regular;
     text-transform: uppercase;
@@ -85,11 +147,32 @@
         "column1 column3 column3";
       gap: 1rem;
       grid-template-columns: 1.8fr 1fr 2fr;
-       @media #{$xxl} { grid-template-columns: 1.7fr 1fr 2fr; }
-    @media #{$xl} { grid-template-columns: 1.5fr 1fr 2fr; }
-    @media #{$lg} { grid-template-columns: 1.3fr 1fr 2fr; }
-    @media #{$md} { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    @media #{$sm} { grid-template-columns: 1fr; grid-template-rows: auto; }
+      @media #{$xxl} {
+        grid-template-columns: 1.7fr 1fr 2fr;
+      }
+      @media #{$xl} {
+        grid-template-columns: 1fr auto 1.5fr;
+      }
+      @media #{$lg} {
+        grid-template-columns: 1fr auto 1.5fr;
+        grid-template-rows: 1fr auto;
+      }
+      @media #{$md} {
+        grid-template-columns: 1fr 1fr auto;
+        grid-template-rows: auto;
+      }
+      @media #{$sm} {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      @media #{$xs} {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "column2"
+          "column1"
+          "column3";
+        gap: 2rem;
+      }
       grid-template-rows: 13rem auto;
       width: 100%;
       margin-inline: auto;
@@ -109,8 +192,29 @@
       @media #{$xl} {
         font-size: 1.2rem;
         line-height: $line-height-1;
-        padding-left: 2rem;
+        padding-left: 1rem;
       }
+      @media #{$lg} {
+        font-size: 1rem;
+        line-height: $line-height-1;
+        padding-left: 1.75rem;
+      }
+      @media #{$md} {
+        font-size: 1rem;
+        line-height: $line-height-1;
+        padding-left: 0.5rem;
+      }
+      @media #{$sm} {
+        font-size: 1.75rem;
+        line-height: $line-height-1;
+        padding-left: 0.5rem;
+      }
+      @media #{$xs} {
+        font-size: 1.5rem;
+        line-height: $line-height-1;
+        padding-left: 0.5rem;
+      }
+
       font-weight: $font-weight-regular;
       line-height: $line-height-2;
       color: $color-blue-100;
@@ -140,6 +244,10 @@
     text-align: center;
     padding: 2rem 0 4rem 0;
   }
+  &__item__design {
+    @include flex-center;
+    flex-direction: column;
+  }
 }
 .inter_agency {
   .portfolio-number {
@@ -154,22 +262,22 @@
       font-size: 1rem;
       line-height: $line-height-1;
     }
-      @media #{$lg} {
-        font-size: 0.875rem;
-        line-height: $line-height-1;
-      }
-        @media #{$md} {
-          font-size: 0.75rem;
-          line-height: $line-height-1;
-        }
-          @media #{$sm} {
-            font-size: 0.625rem;
-            line-height: $line-height-1;
-          }
-          @media #{$xs} {
-            font-size: 0.5rem;
-            line-height: $line-height-1;
-          }
+    @media #{$lg} {
+      font-size: 0.875rem;
+      line-height: $line-height-1;
+    }
+    @media #{$md} {
+      font-size: 0.75rem;
+      line-height: $line-height-1;
+    }
+    @media #{$sm} {
+      font-size: 0.625rem;
+      line-height: $line-height-1;
+    }
+    @media #{$xs} {
+      font-size: 0.5rem;
+      line-height: $line-height-1;
+    }
     letter-spacing: -1px;
     color: $color-white;
   }
@@ -177,7 +285,7 @@
 .column_one {
   grid-area: column1;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -185,12 +293,28 @@
   grid-area: column2;
   position: relative;
   left: -14rem;
-    @media #{$xxl} { left: -12rem; }
-  @media #{$xl} { left: -10rem; }
-  @media #{$lg} { left: -8rem; }
-  @media #{$md} { left: -5rem; }
-  @media #{$sm} { left: -2rem; }
-  @media #{$xs} { left: -1px; }
+  @media #{$xxl} {
+    left: -12rem;
+  }
+  @media #{$xl} {
+    left: -10rem;
+  }
+  @media #{$lg} {
+    left: -8rem;
+  }
+  @media #{$md} {
+    left: -6rem;
+  }
+  @media #{$sm} {
+    left: -2rem;
+  }
+  @media #{$xs} {
+    grid-area: column2;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
   width: 100%;
   display: flex;
   align-items: center;
@@ -202,12 +326,18 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  @media #{$xs} {
+    grid-area: column3;
+  }
   > div:first-child {
     width: 100%;
   }
   .swiper.inter_agency {
     position: relative;
     left: 7%;
+    @media #{$xs} {
+      left: 0%;
+    }
   }
 }
 /* Swiper Styles */
@@ -216,6 +346,9 @@
   overflow: hidden;
   max-width: 560px;
   margin-right: auto;
+  @media #{$xs} {
+    max-width: 360px;
+  }
 
   &-slide {
     display: flex;
@@ -229,4 +362,3 @@
     }
   }
 }
-
