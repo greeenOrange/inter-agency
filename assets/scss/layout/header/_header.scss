@@ -47,6 +47,85 @@
   justify-content: center;
   gap: 0.4rem;
 }
+  .nav-toggle {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      left: 0;
+    }
+    
+    &::before { top: -8px; }
+    &::after { bottom: -8px; }
+  }
+  
+  &.active {
+    .hamburger {
+      background: #fff;
+      
+      &::before,
+      &::after {
+        background: #fff;
+      }
+    }
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  visibility: hidden;
+  z-index: 999;
+  
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      overflow: hidden;
+      
+      a {
+        display: inline-block;
+        color: #fff;
+        font-size: 3rem;
+        text-decoration: none;
+        padding: 1rem 0;
+        transform: translateY(100%);
+      }
+    }
+  }
+}
 
 .badge {
   background-color: $color-green;
@@ -54,10 +133,8 @@
   position: absolute;
   top: -4px;
   right: -260px; 
-  /* Adjusted from 100% for better control */
   overflow: hidden;
   transform: rotate(44.93deg) translateX(20%);
-  /* Added translateX for positioning */
   z-index: 10;
   &__text {
     font-family: $font-secondary;
@@ -66,18 +143,5 @@
     line-height: 77px;
     font-weight: bold;
     text-align: center;
-  }
-}
-
-.menu-button {
-  padding: 0.5rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  .menu-line {
-    display: block;
-    width: 1.5rem;
-    height: 2px;
-    background-color: $color-white;
-    margin: 4px 0;
   }
 }

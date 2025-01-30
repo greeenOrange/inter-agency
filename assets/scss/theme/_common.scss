@@ -1,0 +1,49 @@
+@use "../utils/" as *;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.menu-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  .menu-line {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: $color-white;
+    margin: 4px 0;
+  }
+}
+// Nav toggle specific styles
+.nav_toggle {
+  z-index: 1001;
+
+  &.active {
+    .menu-line {
+      background-color: #fff;
+    }
+  }
+}
+
+
+[animate] {
+  overflow: hidden;
+}
+[animate] .word {
+  display: inline-block;
+  transform-origin: bottom left;
+}
+[animate] .char {
+  display: inline-block;
+}
+[animate].force-block {
+  display: block;
+}
