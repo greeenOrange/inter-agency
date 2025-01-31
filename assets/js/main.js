@@ -1,4 +1,66 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Modified helper function to handle spaces correctly
+  const splitText = (element) => {
+    const text = element.textContent;
+    element.textContent = '';
+    
+    return text.split('').map(char => {
+      const span = document.createElement('span');
+      // For spaces, use a non-breaking space and add a specific class
+      if (char === ' ') {
+        span.textContent = '\u00A0'; // non-breaking space
+        span.classList.add('space');
+      } else {
+        span.textContent = char;
+      }
+      span.style.display = 'inline-block';
+      element.appendChild(span);
+      return span;
+    });
+  };
 
+  // Get all title elements
+  const visionTitle = document.querySelector('.hero__title_vision');
+  const ourTitle = document.querySelector('.hero__title_our');
+  const designTitle = document.querySelector('.hero__title_design');
+
+  // Split each title into characters
+  const visionChars = splitText(visionTitle);
+  const ourChars = splitText(ourTitle);
+  const designChars = splitText(designTitle);
+
+  // Create GSAP timeline
+  const tl = gsap.timeline();
+
+  // Initial state
+  gsap.set([visionChars, ourChars, designChars], {
+    opacity: 0,
+    y: 50
+  });
+
+  // Animate titles
+  tl.to(visionChars, {
+    duration: 0.8,
+    opacity: 1,
+    y: 0,
+    stagger: 0.05,
+    ease: "back.out(1.7)"
+  })
+  .to(ourChars, {
+    duration: 0.6,
+    opacity: 1,
+    y: 0,
+    stagger: 0.05,
+    ease: "power2.out"
+  }, "-=0.3")
+  .to(designChars, {
+    duration: 0.6,
+    opacity: 1,
+    y: 0,
+    stagger: 0.05,
+    ease: "elastic.out(1, 0.3)"
+  }, "-=0.3");
+});
 
 // cta text animation 
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,69 +230,68 @@ gsap.from(".footer__social a", {
 });
 
 // Initialize variables
-const navToggle = document.querySelector(".nav_toggle");
-const navMenu = document.querySelector(".nav-menu");
-const navLinks = document.querySelectorAll(".nav-menu__links li a");
-let isOpen = false;
-
-// Create timeline
-const tl = gsap.timeline({ paused: true });
-
-// Build the animation sequence
-tl.to(navMenu, {
-  visibility: "visible",
-  duration: 0,
-})
-  .fromTo(
-    navMenu,
-    {
-      clipPath: "circle(0% at 100% 0)",
-    },
-    {
-      clipPath: "circle(150% at 100% 0)",
-      duration: 1,
-      ease: Power2.easeInOut,
-    }
-  )
-  .to(
-    ".nav-menu__content",
-    {
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuClose = document.querySelector('.menu-close');
+  const fullscreenMenu = document.querySelector('.fullscreen-menu');
+  const menuLinks = document.querySelectorAll('.fullscreen-menu__link');
+  const bagButton = document.querySelector('.bag-button');
+  
+  let menuTimeline = gsap.timeline({ paused: true });
+  
+  // Build the animation timeline
+  menuTimeline
+    // Set initial visibility
+    .to(fullscreenMenu, {
+      visibility: 'visible',
+      duration: 0
+    })
+    // Slide in menu from left
+    .to(fullscreenMenu, {
+      x: '0%',
+      duration: 0.6,
+      ease: 'power2.inOut'
+    })
+    // Hide menu toggle and bag button
+    .to([menuToggle, bagButton], {
+      opacity: 0,
+      visibility: 'hidden',
+      duration: 0.3
+    }, "<") // Start at same time as menu appears
+    // Show close button
+    .to(menuClose, {
+      visibility: 'visible',
       opacity: 1,
-      duration: 0.8,
-      ease: Power2.easeOut,
-    },
-    "-=0.5"
-  )
-  .to(
-    navLinks,
-    {
-      y: 0,
-      duration: 0.8,
+      duration: 0.3
+    })
+    // Slide in menu links from left
+    .to(menuLinks, {
+      x: 0,
+      opacity: 1,
       stagger: 0.1,
-      ease: Power2.easeOut,
-    },
-    "-=0.5"
-  );
-
-// Add click event handler
-navToggle.addEventListener("click", () => {
-  if (!isOpen) {
-    // Open menu
-    tl.play();
-    navToggle.classList.add("active");
-  } else {
-    // Close menu
-    tl.reverse();
-    navToggle.classList.remove("active");
-  }
-  isOpen = !isOpen;
-});
-// Close menu on link click
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    tl.reverse();
-    navToggle.classList.remove("active");
-    isOpen = false;
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+  
+  // Open menu function
+  const openMenu = () => {
+    menuTimeline.play();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  // Close menu function
+  const closeMenu = () => {
+    menuTimeline.reverse();
+    document.body.style.overflow = '';
+  };
+  
+  // Event listeners
+  menuToggle.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  
+  // Close menu when clicking links
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 });
 

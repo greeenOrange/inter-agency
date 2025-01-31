@@ -20,39 +20,99 @@
             <img src="./assets/images/logo.png" alt="Logo" />
           </a>
           <div class="nav-right">
-            <button class="menu-button">
-              <img src="./assets/images/header/bag.png" alt="" />
+            <button class="menu-button bag-button">
+              <img src="./assets/images/header/bag.png" alt="Shopping bag" />
             </button>
 
-            <button class="menu-button nav_toggle">
-              <span class="sr-only hamburger">Menu</span>
-              <span class="menu-line"></span>
-              <span class="menu-line"></span>
+            <button class="menu-button menu-toggle">
+              <span class="menu-toggle__label">Menu</span>
+              <div class="menu-toggle__lines">
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+              </div>
             </button>
 
-            <!-- <button class="menu-button nav-close">
-              <span class="sr-only">Close</span>
-              <span class="menu-line"></span>
-              <span class="menu-line"></span>
-            </button> -->
-            <!-- Fullscreen Navigation Menu -->
-            <div class="nav-menu">
-              <div class="nav-menu__content">
-                <ul class="nav-menu__links">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Work</a></li>
-                  <li><a href="#">Contact</a></li>
+            <div class="fullscreen-menu">
+              <button class="menu-button menu-close">
+                <div class="menu-close__lines">
+                  <span class="menu-close__line"></span>
+                  <span class="menu-close__line"></span>
+                </div>
+              </button>
+
+              <div class="fullscreen-menu__content">
+                <ul class="fullscreen-menu__links">
+                  <li class="fullscreen-menu__item">
+                    <a href="#" class="fullscreen-menu__link">Home</a>
+                  </li>
+                  <li class="fullscreen-menu__item">
+                    <a href="#" class="fullscreen-menu__link">About</a>
+                  </li>
+                  <li class="fullscreen-menu__item">
+                    <a href="#" class="fullscreen-menu__link">Services</a>
+                  </li>
+                  <li class="fullscreen-menu__item">
+                    <a href="#" class="fullscreen-menu__link">Work</a>
+                  </li>
+                  <li class="fullscreen-menu__item">
+                    <a href="#" class="fullscreen-menu__link">Contact</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </nav>
       </div>
-      <!-- <div class="badge">
-        <h2 class="badge__text">Branding Design \\Agency \\video production</h2>
-      </div> -->
+      <!-- Marque part -->
+      <div class="marquee">
+        <div class="marquee__content">
+          <div class="marquee__inner">
+            <svg
+              class="marquee__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="66"
+              height="66"
+              viewBox="0 0 66 66"
+              fill="none"
+            >
+              <path
+                d="M54.0931 44.787L57.058 33.5699C55.0372 33.0204 45.6888 31.6264 39.154 31.5548C44.782 28.2794 52.1746 22.4676 53.6415 21.0041L45.3696 12.7511C43.9027 14.2147 38.0685 21.5994 34.7946 27.2054C34.7259 20.6825 33.3195 11.3464 32.7749 9.34247L21.5289 12.2975C22.0797 14.3136 25.597 23.0892 28.8579 28.7668C23.1581 25.5225 14.3715 22.0042 12.3507 21.4547L9.38586 32.6718C11.4066 33.2213 20.755 34.6153 27.2898 34.6869C21.6618 37.9623 14.2693 43.774 12.8023 45.2376L21.0743 53.4906C22.5412 52.027 28.3754 44.6423 31.6492 39.0363C31.718 45.5591 33.1243 54.8953 33.669 56.8992L44.9118 53.9412C44.361 51.925 40.8438 43.1494 37.5829 37.4718C43.2826 40.7162 52.0693 44.2344 54.0901 44.784L54.0931 44.787Z"
+                fill="#041C0C"
+              />
+            </svg>
+            <span>UI/UX Design</span>
+            <svg
+              class="marquee__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="66"
+              height="66"
+              viewBox="0 0 66 66"
+              fill="none"
+            >
+              <path
+                d="M54.0931 44.787L57.058 33.5699C55.0372 33.0204 45.6888 31.6264 39.154 31.5548C44.782 28.2794 52.1746 22.4676 53.6415 21.0041L45.3696 12.7511C43.9027 14.2147 38.0685 21.5994 34.7946 27.2054C34.7259 20.6825 33.3195 11.3464 32.7749 9.34247L21.5289 12.2975C22.0797 14.3136 25.597 23.0892 28.8579 28.7668C23.1581 25.5225 14.3715 22.0042 12.3507 21.4547L9.38586 32.6718C11.4066 33.2213 20.755 34.6153 27.2898 34.6869C21.6618 37.9623 14.2693 43.774 12.8023 45.2376L21.0743 53.4906C22.5412 52.027 28.3754 44.6423 31.6492 39.0363C31.718 45.5591 33.1243 54.8953 33.669 56.8992L44.9118 53.9412C44.361 51.925 40.8438 43.1494 37.5829 37.4718C43.2826 40.7162 52.0693 44.2344 54.0901 44.784L54.0931 44.787Z"
+                fill="#041C0C"
+              />
+            </svg>
+            <span>Video Production</span>
+            <svg
+              class="marquee__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="66"
+              height="66"
+              viewBox="0 0 66 66"
+              fill="none"
+            >
+              <path
+                d="M54.0931 44.787L57.058 33.5699C55.0372 33.0204 45.6888 31.6264 39.154 31.5548C44.782 28.2794 52.1746 22.4676 53.6415 21.0041L45.3696 12.7511C43.9027 14.2147 38.0685 21.5994 34.7946 27.2054C34.7259 20.6825 33.3195 11.3464 32.7749 9.34247L21.5289 12.2975C22.0797 14.3136 25.597 23.0892 28.8579 28.7668C23.1581 25.5225 14.3715 22.0042 12.3507 21.4547L9.38586 32.6718C11.4066 33.2213 20.755 34.6153 27.2898 34.6869C21.6618 37.9623 14.2693 43.774 12.8023 45.2376L21.0743 53.4906C22.5412 52.027 28.3754 44.6423 31.6492 39.0363C31.718 45.5591 33.1243 54.8953 33.669 56.8992L44.9118 53.9412C44.361 51.925 40.8438 43.1494 37.5829 37.4718C43.2826 40.7162 52.0693 44.2344 54.0901 44.784L54.0931 44.787Z"
+                fill="#041C0C"
+              />
+            </svg>
+            <span>Branding</span>
+          </div>
+        </div>
+      </div>
+      <!-- Marque Part -->
     </header>
     <!-- Header part -->
 
@@ -281,7 +341,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
