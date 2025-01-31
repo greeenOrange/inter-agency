@@ -244,6 +244,11 @@ input[type=color] {
   align-items: center;
   gap: 2rem;
 }
+@media (max-width: 767px) {
+  .hero__title__wrapper {
+    display: block;
+  }
+}
 .hero__title_vision {
   font-family: "hagrid-Text", sans-serif;
   color: #fff;
@@ -478,21 +483,33 @@ input[type=color] {
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   .hero__subtitle {
     font-size: 1.56rem;
+    line-height: 2;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .hero__subtitle {
     font-size: 1.23rem;
+    line-height: 2;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .hero__subtitle {
     font-size: 1rem;
+    line-height: 1.5;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero__subtitle {
+    font-size: 1.875rem;
+    line-height: 1.1;
+  }
+}
+@media (max-width: 767px) {
+  .hero__subtitle {
+    text-align: center;
+    margin-top: 1rem;
     font-size: 0.875rem;
+    line-height: 1.1;
   }
 }
 .hero .hero__middle__items {
@@ -1424,19 +1441,59 @@ input[type=color] {
 }
 
 .marquee {
-  width: 100vw;
   overflow: hidden;
   white-space: nowrap;
   background-color: #19EC60;
   padding: 10px 0;
   position: absolute;
   top: -4px;
-  right: -33%;
+  right: -20%;
   transform: rotate(44.93deg) translateX(20%);
+}
+@media only screen and (min-width: 1700px) and (max-width: 1920px) {
+  .marquee {
+    right: -12%;
+  }
+}
+@media only screen and (min-width: 1700px) and (max-width: 1800px) {
+  .marquee {
+    right: -14%;
+  }
+}
+@media only screen and (min-width: 1600px) and (max-width: 1700px) {
+  .marquee {
+    right: -15%;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .marquee {
+    right: -17%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .marquee {
+    font-size: 2.38rem;
+    line-height: 2.81rem;
+    right: -20%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .marquee {
+    width: 150vw;
+    right: -20%;
+  }
 }
 @media (max-width: 767px) {
   .marquee {
-    visibility: hidden;
+    width: 150vw;
+    right: -20%;
+    top: 10%;
+    transform: rotate(44.93deg) translateX(0);
+  }
+}
+@media (max-width: 767px) {
+  .marquee {
+    display: none;
     padding: 5px 0;
   }
 }
@@ -1453,7 +1510,7 @@ input[type=color] {
   color: #0D0D0D;
   font-size: 4.38rem;
   line-height: 4.81rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   will-change: transform;
 }
@@ -1461,20 +1518,6 @@ input[type=color] {
   .marquee__inner {
     font-size: 2.38rem;
     line-height: 2.81rem;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .marquee {
-    width: 150vw;
-    right: -30%;
-  }
-}
-@media (max-width: 767px) {
-  .marquee {
-    width: 150vw;
-    right: -32%;
-    top: 10%;
-    transform: rotate(44.93deg) translateX(0);
   }
 }
 

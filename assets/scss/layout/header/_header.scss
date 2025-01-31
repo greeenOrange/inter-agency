@@ -53,7 +53,7 @@
   cursor: pointer;
   padding: 0.5rem;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  
+
   &:focus {
     outline: none;
   }
@@ -62,7 +62,7 @@
 .menu-toggle {
   position: relative;
   z-index: 100;
-  
+
   &__label {
     position: absolute;
     width: 1px;
@@ -73,13 +73,13 @@
     clip: rect(0, 0, 0, 0);
     border: 0;
   }
-  
+
   &__lines {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
-  
+
   &__line {
     display: block;
     width: 24px;
@@ -96,13 +96,13 @@
   z-index: 110;
   opacity: 0;
   visibility: hidden;
-  
+
   &__lines {
     position: relative;
     width: 24px;
     height: 24px;
   }
-  
+
   &__line {
     position: absolute;
     top: 50%;
@@ -110,11 +110,11 @@
     width: 100%;
     height: 2px;
     background-color: $color-white;
-    
+
     &:first-child {
       transform: rotate(45deg);
     }
-    
+
     &:last-child {
       transform: rotate(-45deg);
     }
@@ -124,7 +124,7 @@
 .menu-toggle {
   position: relative;
   z-index: 100;
-  
+
   &__label {
     position: absolute;
     width: 1px;
@@ -135,13 +135,13 @@
     clip: rect(0, 0, 0, 0);
     border: 0;
   }
-  
+
   &__lines {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
-  
+
   &__line {
     display: block;
     width: 24px;
@@ -158,13 +158,13 @@
   z-index: 110;
   opacity: 0;
   visibility: hidden;
-  
+
   &__lines {
     position: relative;
     width: 24px;
     height: 24px;
   }
-  
+
   &__line {
     position: absolute;
     top: 50%;
@@ -172,11 +172,11 @@
     width: 100%;
     height: 2px;
     background-color: $color-white;
-    
+
     &:first-child {
       transform: rotate(45deg);
     }
-    
+
     &:last-child {
       transform: rotate(-45deg);
     }
@@ -193,7 +193,7 @@
   visibility: hidden;
   z-index: 90;
   transform: translateX(-100%); // Start from left side
-  
+
   &__content {
     height: 100%;
     display: flex;
@@ -201,18 +201,18 @@
     justify-content: center;
     padding: 2rem;
   }
-  
+
   &__links {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
+
   &__item {
     overflow: hidden;
     margin: 1rem 0;
   }
-  
+
   &__link {
     display: inline-block;
     color: $color-white;
@@ -220,26 +220,55 @@
     text-decoration: none;
     transform: translateX(-100%); // Links also start from left
     opacity: 0;
-    
+
     &:hover {
       color: $color-blue;
     }
   }
 }
 .marquee {
-  width: 100vw; // Changed to viewport width
   overflow: hidden;
   white-space: nowrap;
   background-color: $color-green;
   padding: 10px 0;
-  @media #{$xs} {
-    visibility: hidden;
-    padding: 5px 0;
-  }
   position: absolute;
   top: -4px;
-  right: -33%;
+  right: -20%;
   transform: rotate(44.93deg) translateX(20%);
+  
+  @media #{$x5l} {
+    right: -12%;
+  }
+  @media #{$x4l} {
+    right: -14%;
+  }
+  @media #{$x3l} {
+    right: -15%;
+  }
+  @media #{$xxl} {
+    right: -17%;
+  }
+
+  @media #{$xl} {
+    font-size: 2.38rem;
+    line-height: 2.81rem;
+    right: -20%;
+  }
+  @media #{$sm} {
+    width: 150vw;
+    right: -20%;
+  }
+  @media #{$xs} {
+    width: 150vw;
+    right: -20%;
+    top: 10%;
+    transform: rotate(44.93deg) translateX(0);
+  }
+
+  @media #{$xs} {
+    display: none;
+    padding: 5px 0;
+  }
   &__content {
     display: flex;
     width: fit-content;
@@ -253,22 +282,12 @@
     color: $color-dark-100;
     font-size: 4.38rem;
     line-height: 4.81rem;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    will-change: transform;
     @media #{$xs} {
       font-size: 2.38rem;
       line-height: 2.81rem;
     }
-    font-weight: bold;
-    text-align: center;
-    will-change: transform;
-  }
-  @media #{$sm} {
-    width: 150vw;
-    right: -30%;
-  }
-  @media #{$xs} {
-    width: 150vw;
-    right: -32%;
-    top: 10%;
-    transform: rotate(44.93deg) translateX(0);
   }
 }

@@ -1,5 +1,15 @@
+// marquee section
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.to(".marquee__inner", {
+    x: "-50%", // Move left infinitely
+    duration: 10, // Adjust speed
+    ease: "linear",
+    repeat: -1, // Infinite loop
+  });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Modified helper function to handle spaces correctly
   const splitText = (element) => {
     const text = element.textContent;
     element.textContent = '';
@@ -64,15 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // cta text animation 
 document.addEventListener('DOMContentLoaded', () => {
-  // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  // Helper function to split text while maintaining flex layout
   const splitText = (element, preserveChars = []) => {
     const text = element.textContent;
     element.textContent = '';
-    element.style.display = 'flex'; // Make the element itself flex
-    element.style.alignItems = 'center'; // Center align the characters
+    element.style.display = 'flex';
+    element.style.alignItems = 'center';
     
     let chars = [];
     let currentIndex = 0;
@@ -81,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const char = text[currentIndex];
       const span = document.createElement('span');
       
-      // Check if current character is part of preserved sequence
       let preservedChar = preserveChars.find(pc => text.substring(currentIndex).startsWith(pc));
       
       if (preservedChar) {
@@ -99,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return chars;
   };
 
-  // Get title elements
   const titleOne = document.querySelector('.cta__title_one');
   const rightArrow = document.querySelector('.cta__right_arrow');
   const secondTitle = document.querySelector('.cta__second_title');
@@ -295,25 +301,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-var swiper = new Swiper(".inter_agency", {
-  // Default settings (for mobile first)
-  slidesPerView: 2,
-  spaceBetween: 20,
-  breakpoints: {
-    // >= 640px
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.inter_agency', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
     },
-    // >= 768px
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30,
+
+    // Optional navigation
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-    // >= 1024px
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
+
+    // Optional pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
 });

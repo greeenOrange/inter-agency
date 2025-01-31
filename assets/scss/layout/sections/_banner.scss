@@ -20,6 +20,9 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    @media #{$xs} {
+      display: block;
+    }
   }
   &__title_vision {
     @include title-styles($font-size-4xl, $line-height-7);
@@ -117,15 +120,25 @@
     font-size: $font-size-xs;
     @media #{$xxl} {
       font-size: 1.56rem;
+      line-height: 2;
     }
     @media #{$xl} {
       font-size: 1.23rem;
+      line-height: 2;
     }
     @media #{$lg} {
       font-size: 1rem;
+      line-height: 1.5;
     }
     @media #{$md} {
+      font-size: 1.875rem;
+      line-height: 1.1;
+    }
+    @media #{$xs} {
+      text-align: center;
+      margin-top: 1rem;
       font-size: 0.875rem;
+      line-height: 1.1;
     }
     line-height: $line-height-3;
     font-weight: $font-weight-regular;
@@ -243,9 +256,6 @@
   }
 }
 .inter_agency {
-  .swiper {
-    // z-index: -1;
-  }
   .portfolio-number {
     font-family: $font-secondary;
     font-size: 1.375rem; // 22px
