@@ -197,7 +197,7 @@
   &__content {
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 2rem;
   }
@@ -214,12 +214,17 @@
   }
 
   &__link {
+    font-family: $font-secondary;
     display: inline-block;
     color: $color-white;
     font-size: 3rem;
     text-decoration: none;
-    transform: translateX(-100%); // Links also start from left
+    transform: translateX(-100%); 
     opacity: 0;
+    @media #{$xs}{
+      font-size: 1.2rem;
+      line-height: 1;
+      }
 
     &:hover {
       color: $color-blue;
