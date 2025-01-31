@@ -71,17 +71,20 @@
     max-width: 100%;
     object-fit: contain;
     @media #{$lg} {
-      width: 20%;
+      width: 60%;
     }
     @media #{$md} {
-      width: 17%;
+      width: 60%;
     }
     @media #{$sm} {
-      width: 12%;
+      width: 60%;
     }
     @media #{$xs} {
-      width: 60px;
+      width: 60%;
       height: auto;
+    }
+    .vision {
+      padding-left: 1rem;
     }
   }
   &__title_design {
@@ -106,18 +109,7 @@
     }
     text-transform: uppercase;
   }
-  &__middle__title {
-    padding-bottom: 4.5rem;
-    @media #{$xxl} {
-      padding-bottom: 3rem;
-    }
-    @media #{$xl} {
-      padding-bottom: 2rem;
-    }
-    @media #{$xs} {
-      padding-bottom: 0;
-    }
-  }
+
   &__subtitle {
     align-self: flex-end;
     font-family: $font-secondary;
@@ -251,9 +243,9 @@
   }
 }
 .inter_agency {
-  .swiper{
+  .swiper {
     z-index: -1;
-    }
+  }
   .portfolio-number {
     font-family: $font-secondary;
     font-size: 1.375rem; // 22px
@@ -315,13 +307,15 @@
   @media #{$xs} {
     grid-area: column2;
     left: 0;
-    flex-direction: column;
+    grid-template-columns: auto 1fr;
     justify-content: center;
     text-align: center;
   }
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
   gap: 1rem;
 }
 .column_three {

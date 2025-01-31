@@ -9,7 +9,7 @@
     padding: 0 3rem;
   }
   &__last_email {
-    padding-right: 8rem;
+    padding-right: 3rem;
     margin-top: 1rem;
     align-self: flex-end;
     font-family: $font-secondary;
@@ -19,26 +19,22 @@
       font-size: $font-size-lg;
       line-height: $line-height-5;
     }
-    @media #{$xl} {
-      font-size: 3rem;
-      line-height: 1;
-    }
     @media #{$lg} {
       font-size: 2.5rem;
       line-height: 1;
     }
     @media #{$md} {
-      padding-right: 3rem;
+      padding-right: 2rem;
       font-size: 2rem;
       line-height: 1;
     }
     @media #{$sm} {
-      padding-right: 2.5rem;
+      padding-right: 1.5rem;
       font-size: 1.5.5rem;
       line-height: 1;
     }
     @media #{$xs} {
-      padding-right: 1rem;
+      padding-right: 0rem;
       font-size: 1rem;
       line-height: 1;
     }
@@ -204,12 +200,12 @@
   @media #{$xxl} {
     width: 20rem;
     height: 20rem;
-    margin: -13.25rem 30rem 0 auto;
+    margin: -10.25rem 30rem 0 auto;
   }
   @media #{$xl} {
     width: 17.5rem;
     height: 17.5rem;
-    margin: -11.25rem 28rem 0 auto;
+    margin: -7.25rem 28rem 0 auto;
   }
   @media #{$lg} {
     width: 15rem;
@@ -227,9 +223,9 @@
     margin: -5.25rem 20rem 0 auto;
   }
   @media #{$xs} {
-    width: 8.5rem;
-    height: 8.5rem;
-    margin: -3.25rem 17rem 0 auto;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: -2.25rem 17rem 0 auto;
   }
   background-color: transparent;
 }
