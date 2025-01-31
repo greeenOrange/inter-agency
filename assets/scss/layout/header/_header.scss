@@ -219,12 +219,12 @@
     color: $color-white;
     font-size: 3rem;
     text-decoration: none;
-    transform: translateX(-100%); 
+    transform: translateX(-100%);
     opacity: 0;
-    @media #{$xs}{
+    @media #{$xs} {
       font-size: 1.2rem;
       line-height: 1;
-      }
+    }
 
     &:hover {
       color: $color-blue;
@@ -235,37 +235,46 @@
   overflow: hidden;
   white-space: nowrap;
   background-color: $color-green;
-  padding: 10px 0;
+  padding: 0.75rem 0;
   position: absolute;
   top: -4px;
   right: -20%;
   transform: rotate(44.93deg) translateX(20%);
-  
+
   @media #{$x5l} {
-    right: -12%;
+    right: -30%;
   }
   @media #{$x4l} {
-    right: -14%;
+    right: -23%;
   }
   @media #{$x3l} {
-    right: -15%;
+    right: -24%;
   }
   @media #{$xxl} {
-    right: -17%;
+    right: -25%;
   }
-
   @media #{$xl} {
     font-size: 2.38rem;
     line-height: 2.81rem;
-    right: -20%;
+    right: -28%;
+  }
+  @media #{$lg} {
+    font-size: 2rem;
+    line-height: 2.1rem;
+    right: -38%;
+  }
+  @media #{$md} {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    right: -48%;
   }
   @media #{$sm} {
     width: 150vw;
-    right: -20%;
+    right: -34%;
   }
   @media #{$xs} {
     width: 150vw;
-    right: -20%;
+    right: -36%;
     top: 10%;
     transform: rotate(44.93deg) translateX(0);
   }
