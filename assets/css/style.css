@@ -1466,7 +1466,7 @@ input[type=color] {
 }
 @media only screen and (min-width: 1700px) and (max-width: 1920px) {
   .marquee {
-    right: -30%;
+    right: -20%;
   }
 }
 @media only screen and (min-width: 1700px) and (max-width: 1800px) {
